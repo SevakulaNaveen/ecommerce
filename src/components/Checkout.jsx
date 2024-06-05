@@ -12,17 +12,19 @@ const Checkout = ({ cartItems, clearCart }) => {
         address: ''
     });
 
-    // Calculate total price
     const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
+    //function to handle confirm order button
     const handleConfirmOrder = () => {
         setIsConfirmed(true);
     };
+
 
     const handleFormChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    //function to handle submit form
     const handleSubmitForm = (e) => {
         e.preventDefault();
         setIsFormSubmitted(true);

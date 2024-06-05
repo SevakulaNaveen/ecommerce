@@ -1,5 +1,6 @@
 import React from 'react';
 
+// cartcard to display all cart items
 const CartCard = ({ item, increaseQuantity, decreaseQuantity, removeItem }) => {
 
     const handleIncrease = () => {

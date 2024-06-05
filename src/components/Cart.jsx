@@ -5,6 +5,7 @@ import emptyCartImage from '../assets/cart.png'
 
 const Cart = ({ cartItems, increaseQuantity, decreaseQuantity, removeItem }) => {
 
+    //function to calculate total price
     const totalPrice = cartItems.reduce((acc, item) => {
         return acc + item.price * item.quantity;
     }, 0);

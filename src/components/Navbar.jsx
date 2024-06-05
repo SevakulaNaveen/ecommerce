@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
 
+    //using uselocation hook to trace the path
     const location = useLocation();
 
     return (

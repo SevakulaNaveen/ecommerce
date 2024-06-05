@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+// creating a productcard to display all the products in the products list
 const ProductCard = ({ product, addCartItems }) => {
     const [isAdded, setIsAdded] = useState(false);
 

@@ -5,9 +5,12 @@ import ProductList from "./components/ProductList";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 
+// this is main component which displays all components and handles routing of components
 const App = () => {
+
   const [cartItems, setCartItems] = useState([]);
 
+  //function to handle addtocart button 
   const addCartItems = (product) => {
     const existingItemIndex = cartItems.findIndex(item => item.id === product.id);
     if (existingItemIndex !== -1) {
@@ -19,6 +22,7 @@ const App = () => {
     }
   };
 
+  //function to handle increase quantity button
   const increaseQuantity = (productId) => {
     const updatedCartItems = cartItems.map(item => {
       if (item.id === productId) {
@@ -29,6 +33,7 @@ const App = () => {
     setCartItems(updatedCartItems);
   };
 
+  //function to handle decrease quantity button
   const decreaseQuantity = (productId) => {
     const updatedCartItems = cartItems.map(item => {
       if (item.id === productId && item.quantity > 1) {
@@ -39,11 +44,14 @@ const App = () => {
     setCartItems(updatedCartItems.filter(item => item.quantity > 0));
   };
 
+  //function to handle remove items from cart button
   const removeItem = (productId) => {
     const updatedCartItems = cartItems.filter(item => item.id !== productId);
     setCartItems(updatedCartItems);
   };
 
+
+  //function to clear cart after sucessfully placing the order
   const clearCart = () => {
     setCartItems([]);
   };
